@@ -1,0 +1,46 @@
+{
+  "name": "jade-sass-seed",
+  "version": "0.1.0",
+  "description": "Starting point for Jade & SAss projects.",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RyanWarner/jade-sass-seed.git"
+  },
+  "keywords": [
+    "jade",
+    "sass"
+  ],
+  "author": "Ryan Warner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RyanWarner/jade-sass-seed/issues"
+  },
+  "homepage": "https://github.com/RyanWarner/jade-sass-seed",
+  "devDependencies": {
+    "del": "^2.1.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cached": "^1.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-eslint": "^1.1.0",
+    "gulp-flatten": "0.2.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-open": "^1.0.0",
+    "gulp-run-sequence": "^0.3.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-scss-lint": "^0.3.8",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "imagemin-pngquant": "^4.2.0",
+    "node-sass": "^3.4.2",
+    "path": "^0.12.7",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.4"
+  }
+}
