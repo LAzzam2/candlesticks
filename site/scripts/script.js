@@ -17,7 +17,8 @@ $(document).keypress(function(event) {
     }
 });
 
-$("form").submit(function() { 
+$(document).on('submit',function() { 
+	return false;
 });
 
 function generateData(inputSymbol) {
