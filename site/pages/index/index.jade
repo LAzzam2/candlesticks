@@ -2,14 +2,28 @@ include ../../common-components/head/head.jade
 
 doctype html
 html
-	+head( 'jade-sass-seed' )
+	+head( 'page-one' )
 	body
-		.page-title-and-image
-			.page-title
-				| jade-sass-seed
-			.mineral
-		nav
-			a.nav-item( href='/index.html' )
-				| jade-sass-seed
-			a.nav-item( href='/page-one.html' )
-				| page-one
+		h1
+			| insert a symbol to begin.
+		.chart
+			.candlestick
+				.wick( class="upper" )
+					.high
+						p
+					.low
+						p
+					.line
+				.body
+				.wick( class="lower" )
+					.high
+						p
+					.low
+						p
+					.line
+		#results
+			p
+		form( id="symbol-form" action="#" )
+			label( for="o-bs-sum-bug-ErrorPrefix" ) $
+			input( class="symbol-input" label="$" )
+
