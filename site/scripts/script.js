@@ -82,6 +82,7 @@ function generateData(inputSymbol) {
 			symbol.upperWick = (symbol.high - symbol.prevClose) / symbol.spread;
 			symbol.lowerWick = (symbol.price - symbol.low) / symbol.spread;
 			symbol.body = (symbol.prevClose - symbol.price) / symbol.spread;
+			console.log(symbol);
 		}else{
 			$('body').removeClass('neg');
 			$('body').removeClass('pos');
