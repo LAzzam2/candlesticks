@@ -5,22 +5,25 @@ html
 	+head( 'page-one' )
 	body
 		h1
-			| GPRO
+			| insert a symbol to begin.
 		.chart
 			.candlestick
 				.wick( class="upper" )
 					.high
-						p 1.60
+						p
 					.low
-						p 1.50
+						p
 					.line
 				.body
 				.wick( class="lower" )
 					.high
-						p 1.20
+						p
 					.low
-						p 1.00
+						p
 					.line
 		#results
 			p
+		form( id="symbol-form" action="#" )
+			label( for="o-bs-sum-bug-ErrorPrefix" ) $
+			input( class="symbol-input" label="$" )
 
