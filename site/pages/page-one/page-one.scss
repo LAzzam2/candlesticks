@@ -79,30 +79,42 @@ h1
 		transition: all 550ms ease-out;
 	}
 }
+
 .candlestick.muted
 {
 	opacity: 0.3;
 
 	filter: blur(3px);
 }
+
 body.pos
 {
 	background: #718db5;
+}
+
+.candlestick.pos
+{
 	.body,
 	.line
 	{
 		background-color: #ccf0b2;
 	}
 }
+
 body.neg
 {
 	background: #f391e2;
+}
+
+.candlestick.neg
+{
 	.body,
 	.line
 	{
 		background-color: #e44585;
 	}
 }
+
 .candlestick:hover
 {
 	.high,

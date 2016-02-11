@@ -17,6 +17,8 @@ html
 
 	color: $black;
 	font-family: $helvetica;
+
+	transition: background-color 250ms ease-out;
 }
 
 h1

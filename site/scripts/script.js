@@ -1,7 +1,5 @@
 'use strict';
 
-console.log( 'Javascript.' );
-
 $(document).keypress(function(event) {
 	$(".symbol-input").focus();
     if (event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode >= 97 && event.keyCode <= 122 ){
@@ -33,7 +31,6 @@ function generateData(inputSymbol) {
         $('.candlestick').removeClass('muted');
         $('h1').text('$'+symbol);
     	$('#results').addClass('active');
-        console.log(data.query.results);
         setItems(data);
     })
         .fail(function (jqxhr, textStatus, error) {
@@ -59,39 +56,52 @@ function generateData(inputSymbol) {
 
 		var cHeight = window.innerHeight - (window.innerHeight*.40);
 
-		if( symbol.price > symbol.prevClose  ){
-			$('body').addClass('pos');
-			$('body').removeClass('neg');
+		if( symbol.price > symbol.open  ){
+			$('.candlestick').addClass('pos');
+			$('.candlestick').removeClass('neg');
 
 			$('.upper .low p').text(symbol.price);
-			$('.lower .high p').text(symbol.prevClose);
+			$('.lower .high p').text(symbol.open);
 
 			symbol.upperWick = (symbol.high - symbol.price) / symbol.spread;
-			symbol.lowerWick = (symbol.prevClose - symbol.low) / symbol.spread;
-			symbol.body = (symbol.price - symbol.prevClose) / symbol.spread;
+			symbol.body = (symbol.price - symbol.open) / symbol.spread;
+			symbol.lowerWick = (symbol.open - symbol.low) / symbol.spread;
+			bgColor(symbol);
+		}else if( symbol.price < symbol.open ){
+			$('.candlestick').addClass('neg');
+			$('.candlestick').removeClass('pos');
 
-			console.log(symbol);
-
-		}else if( symbol.price < symbol.prevClose ){
-			$('body').addClass('neg');
-			$('body').removeClass('pos');
-
-			$('.upper .low p').text(symbol.prevClose);
+			$('.upper .low p').text(symbol.open);
 			$('.lower .high p').text(symbol.price);
 
-			symbol.upperWick = (symbol.high - symbol.prevClose) / symbol.spread;
+			symbol.upperWick = (symbol.high - symbol.open) / symbol.spread;
+			symbol.body = (symbol.open - symbol.price) / symbol.spread;
 			symbol.lowerWick = (symbol.price - symbol.low) / symbol.spread;
-			symbol.body = (symbol.prevClose - symbol.price) / symbol.spread;
-			console.log(symbol);
+			bgColor(symbol);
 		}else{
-			$('body').removeClass('neg');
-			$('body').removeClass('pos');
+			$('.candlestick').removeClass('neg');
+			$('.candlestick').removeClass('pos');
 
-			$('.upper .low p').text(symbol.prevClose);
+			$('.upper .low p').text(symbol.open);
 			$('.lower .high p').text(symbol.price);
+			bgColor(symbol);
 		}
+		
 		$('.body').css('height',cHeight*symbol.body);
 		$('.upper').css('height',cHeight*symbol.upperWick);
 		$('.lower').css('height',cHeight*symbol.lowerWick);
+		function bgColor(symbol){
+			console.log( symbol.price, symbol.prevClose );
+			if( parseInt(symbol.price) > parseInt(symbol.prevClose) ){
+				$('body').addClass('pos');
+				$('body').removeClass('neg');
+			}else if( symbol.price < symbol.prevClose ){
+				$('body').addClass('neg');
+				$('body').removeClass('pos');
+			}else{
+				$('body').removeClass('neg');
+				$('body').removeClass('pos');
+			}
+		}
     }	
 }
