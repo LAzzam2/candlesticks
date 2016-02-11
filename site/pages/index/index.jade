@@ -7,7 +7,7 @@ html
 		h1
 			| insert a symbol to begin.
 		.chart
-			.candlestick
+			.candlestick.muted
 				.wick( class="upper" )
 					.high
 						p
@@ -23,7 +23,7 @@ html
 					.line
 		#results
 			p
-		form( id="symbol-form" )
+		form( id="symbol-form" action="#" class="active" )
 			label( for="o-bs-sum-bug-ErrorPrefix" ) $
 			input( class="symbol-input" label="$" )
 

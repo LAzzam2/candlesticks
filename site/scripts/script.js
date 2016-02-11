@@ -1,4 +1,7 @@
 'use strict';
+setTimeout(function(){
+	$(".symbol-input").focus();
+});
 
 $(document).keypress(function(event) {
 	$(".symbol-input").focus();
