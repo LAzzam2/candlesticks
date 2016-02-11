@@ -103,7 +103,7 @@ body.pos
 
 body.neg
 {
-	background: #f391e2;
+	background: #eea95e;
 }
 
 .candlestick.neg
@@ -111,7 +111,7 @@ body.neg
 	.body,
 	.line
 	{
-		background-color: #e44585;
+		background-color: #c15050;
 	}
 }
 
@@ -125,12 +125,12 @@ body.neg
 
 	.high
 	{
-		top: 5px;
+		transform: translate( -50%, 5px );
 	}
 
 	.low
 	{
-		bottom: 5px;
+		transform: translate( -50%, -5px );
 	}
 
 	.body,
@@ -138,6 +138,36 @@ body.neg
 	{
 		opacity: 0.8;
 	}
+
+	.upper
+	{
+		.low
+		{
+			transform: translate(-50%,150%);
+		}
+	}
+	// .upper
+	// {
+	// 	.low:hover
+	// 	{
+	// 		transform: translate(-50%,180%);
+	// 	}
+	// }
+
+	.lower
+	{
+		.high
+		{
+			transform: translate(-50%,-150%);
+		}
+	}
+	// .lower:hover
+	// {
+	// 	.high
+	// 	{
+	// 		transform: translate(-50%,-180%);
+	// 	}
+	// }
 }
 
 .body
@@ -191,11 +221,11 @@ body.neg
 
 	.high
 	{
-		top: 10px;
+		top: 0px;
 	}
 	.low
 	{
-		bottom: 10px;
+		bottom: 0px;
 	}
 }
 
@@ -204,6 +234,7 @@ body.neg
 	.high
 	{
 		transition-delay: 75ms;
+		transform: translate(-50%,-50%);
 	}
 }
 .lower
@@ -211,6 +242,7 @@ body.neg
 	.low
 	{
 		transition-delay: 75ms;
+		transform: translate(-50%,50%);
 	}
 }
 
